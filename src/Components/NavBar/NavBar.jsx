@@ -39,7 +39,7 @@ const NavBar = () => {
       </ul>
       <ul className="flex space-x-4">
         <li>
-          <NavLink to="/sign-in">
+          <NavLink to="/my-order">
             <ShoppingBagIcon className="h-6 w-6" />
           </NavLink>
         </li>

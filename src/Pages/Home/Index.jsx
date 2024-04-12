@@ -5,6 +5,7 @@ import CardsPaginaPrincipal from '../../Components/CardsPaginaPrincipal/CardsPag
 import EmpresasAfiliadas from '../../Components/EmpresasAfiliadas/EmpresasAfiliadas'
 import Faqs from '../../Components/Faqs/Faqs'
 import FooterPrincipal from '../../Components/FooterPrincipal/FooterPrincipal'
+import FooterMovil from '../../Components/FooterMovil/FooterMovil'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <EmpresasAfiliadas/>
       <Faqs/>
       <FooterPrincipal/>
+      <FooterMovil/>
     </div>
   )
 }

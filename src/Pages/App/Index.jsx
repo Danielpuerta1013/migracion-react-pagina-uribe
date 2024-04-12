@@ -10,6 +10,7 @@ import Mango from '../Mango/Index.jsx'
 import Rifle from '../Rifle/Index.jsx'
 import NafNaf from '../NafNaf/Index.jsx'
 import AmericanBrands from '../AmericanBrands/Index.jsx'
+import Registro from '../Registro/Registro.jsx'
 
 
 
@@ -21,6 +22,7 @@ function App() {
     { path: '/my-order', element: <MyOrder /> },
     { path: '/my-orders', element: <MyOrders /> },
     { path: '/sign-in', element: <SignIn /> },
+    { path: '/registro', element: <Registro /> },
     { path: '/*', element: <NotFound /> },
     { path: '/mango', element: <Mango /> },
     { path: '/rifle', element: <Rifle /> },
