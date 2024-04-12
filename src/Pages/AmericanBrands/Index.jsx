@@ -3,6 +3,8 @@ import LayoutMarcas from '../../Components/LayoutMarcas/LayoutMarcas.jsx'
 import BotonesBusqueda from '../../Components/BotonesBusqueda/BotonesBusqueda.jsx'
 import FooterMovil from '../../Components/FooterMovil/FooterMovil'
 import LayoutCards from '../../Components/LayoutCards/LayoutCards.jsx'
+import CardsMarcas from '../../Components/CardsMarcas/CardsMarcas.jsx'
+import productos from './productos.js'
 
 const AmericanBrands = () => {
   return (
@@ -16,7 +18,7 @@ const AmericanBrands = () => {
         </div>
       </LayoutMarcas>
       <LayoutCards>
-        
+        <CardsMarcas data={productos}/>        
       </LayoutCards>
       <FooterMovil/>
     </div>

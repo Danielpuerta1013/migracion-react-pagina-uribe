@@ -18,11 +18,11 @@ const BotonesBusqueda = () => {
                 </button>
                 <div  className={`absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${dropdownVisible ? '' : 'hidden'}`}>
                     <div className="py-1">
-                        <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Hombre</NavLink>
-                        <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mujer</NavLink>
-                        <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">camisas</NavLink>
-                        <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">pantalones</NavLink>
-                        <NavLink to="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">chaquetas</NavLink>
+                        <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Hombre</NavLink>
+                        <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Mujer</NavLink>
+                        <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">camisas</NavLink>
+                        <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">pantalones</NavLink>
+                        <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">chaquetas</NavLink>
                     </div>
                 </div>
             </div>
