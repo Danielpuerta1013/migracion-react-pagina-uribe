@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ShoppingCartProvider } from '../../Context/Index.jsx'
 import './App.css'
 import Home from '../Home/Index.jsx'
 import MyAccount from '../MyAccount/Index.jsx'
@@ -11,6 +12,7 @@ import Rifle from '../Rifle/Index.jsx'
 import NafNaf from '../NafNaf/Index.jsx'
 import AmericanBrands from '../AmericanBrands/Index.jsx'
 import Registro from '../Registro/Registro.jsx'
+import CheckoutSideMenu from "../../Components/CheckoutSideMenu/CheckoutSideMenu.jsx";
 
 
 
@@ -31,11 +33,13 @@ function App() {
   ]);
 
   return (
-    
+    <ShoppingCartProvider>
       <RouterProvider router={router}>
         <Home />
+        <CheckoutSideMenu/>
       </RouterProvider>
-    
+    </ShoppingCartProvider>
+
   )
 }
 

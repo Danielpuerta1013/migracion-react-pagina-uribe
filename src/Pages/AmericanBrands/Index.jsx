@@ -4,6 +4,8 @@ import BotonesBusqueda from '../../Components/BotonesBusqueda/BotonesBusqueda.js
 import FooterMovil from '../../Components/FooterMovil/FooterMovil'
 import LayoutCards from '../../Components/LayoutCards/LayoutCards.jsx'
 import CardsMarcas from '../../Components/CardsMarcas/CardsMarcas.jsx'
+import ProductDetail from '../../Components/ProductDetail/ProductDetail.jsx'
+import CheckoutSideMenu from "../../Components/CheckoutSideMenu/CheckoutSideMenu.jsx";
 import productos from './productos.js'
 
 const AmericanBrands = () => {
@@ -13,14 +15,18 @@ const AmericanBrands = () => {
       <LayoutMarcas>
         <p className='text-xl font-bold border-b-2 border-yellow-500 uppercase'>Viste con actitud, encuentra tu estilo en American Brands</p>
         <div className='flex justify-between items-center mt-4'>
-          <BotonesBusqueda/>   
+          <BotonesBusqueda />          
 
         </div>
       </LayoutMarcas>
+      <ProductDetail />
+      <CheckoutSideMenu/>
       <LayoutCards>
-        <CardsMarcas data={productos}/>        
+        <CardsMarcas data={productos} />
+        
       </LayoutCards>
-      <FooterMovil/>
+      <FooterMovil />
+      
     </div>
   )
 }

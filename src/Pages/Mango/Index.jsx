@@ -4,6 +4,8 @@ import BotonesBusqueda from '../../Components/BotonesBusqueda/BotonesBusqueda.js
 import FooterMovil from '../../Components/FooterMovil/FooterMovil'
 import LayoutCards from '../../Components/LayoutCards/LayoutCards.jsx'
 import CardsMarcas from '../../Components/CardsMarcas/CardsMarcas.jsx'
+import ProductDetail from '../../Components/ProductDetail/ProductDetail.jsx'
+import CheckoutSideMenu from "../../Components/CheckoutSideMenu/CheckoutSideMenu.jsx";
 import productos from './productos.js'
 
 
@@ -19,6 +21,8 @@ const Mango = () => {
         </div>
 
       </LayoutMarcas>
+      <ProductDetail />
+      <CheckoutSideMenu/>
       <LayoutCards>
         <CardsMarcas data={productos}/>        
       </LayoutCards>
