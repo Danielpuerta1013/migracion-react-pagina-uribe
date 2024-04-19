@@ -30,6 +30,9 @@ export const ShoppingCartProvider = ({ children }) => {
         setCantidadPrendas(parseInt(event.target.value));
     };
 
+    //orden carrito
+    const[orden,setOrden]=useState([])
+
     
     return (
         <ShoppingCartContext.Provider value={{
@@ -46,7 +49,9 @@ export const ShoppingCartProvider = ({ children }) => {
             openCheckoutSideMenu,
             closeCheckoutSideMenu,
             cantidadPrendas,
-            handleCantidadChange
+            handleCantidadChange,
+            orden,
+            setOrden
 
         }}>
             {children}
