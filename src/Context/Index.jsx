@@ -30,7 +30,8 @@ export const ShoppingCartProvider = ({ children }) => {
         setCantidadPrendas(parseInt(event.target.value));
     };
 
-    //orden carrito
+    // carrito de compras orden
+
     const[orden,setOrden]=useState([])
 
     

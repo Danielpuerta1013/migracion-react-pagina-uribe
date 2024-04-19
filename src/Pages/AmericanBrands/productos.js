@@ -38,7 +38,7 @@ const productos = [
   {
     imagen: i4,
     titulo: "CASACA FI23/HUSTON DENIM",
-    precio: "16900",
+    precio: "161900",
   },
   {
     imagen: i5,
@@ -118,7 +118,7 @@ const productos = [
   {
     imagen: i20,
     titulo: 'VESTIDO FI23/CECILI RAYON',
-    precio: '83900'
+    precio: 83900
   },
 ];
 

@@ -7,6 +7,11 @@ import { TrashIcon } from '@heroicons/react/24/solid';
 const Ordercards = (props) => {
     const context = useContext(ShoppingCartContext)
     const {  titulo, imagen, precio, handleDelete } = props;
+    let renderTrashIcon
+    if(handleDelete){
+        renderTrashIcon= <TrashIcon onClick={()=>handleDelete(titulo)} className='h-6 w-6 text-black cursor-pointer' />
+    
+    }
     
     return (
         <div className='flex justify-between items-center mb-3'>
@@ -24,8 +29,8 @@ const Ordercards = (props) => {
                     onChange={context.handleCantidadChange} // Maneja el cambio en el valor del input
                     className='w-8 text-lg font-medium text-center border border-gray-300 rounded-md'
                 />
-                <p className='text-lg font-medium'>{precio}</p>
-                <TrashIcon onClick={()=>handleDelete(titulo)} className='h-6 w-6 text-black cursor-pointer' />
+                <p className='text-lg font-medium'>{precio}</p>                
+                {renderTrashIcon}
             </div>
         </div>
     );
