@@ -23,102 +23,102 @@ const productos = [
   {
     imagen: i1,
     titulo: "BRALETTE CON DETALLES",
-    precio: "50.900",
+    precio: "50900",
   },
   {
     imagen: i2,
     titulo: "BULLONADA PARA HOMBRE",
-    precio: "250.900",
+    precio: "250900",
   },
   {
     imagen: i3,
     titulo: "CAMISA EN DENIM MANGA ",
-    precio: "79.900",
+    precio: "79900",
   },
   {
     imagen: i4,
     titulo: "CAMISA ESTAMPADA",
-    precio: "$ 60.900",
+    precio: "$ 60900",
   },
   {
     imagen: i5,
     titulo: "CAMISETA MANGA CORTA",
-    precio: "65.900",
+    precio: "65900",
   },
   {
     imagen: i6,
     titulo: "CAMISETA MANGA SISA",
-    precio: "65.900",
+    precio: "65900",
   },
   {
     imagen: i7,
     titulo: "CHAQUETA CON BOLSILLOS",
-    precio: "290",
+    precio: "290000",
   },
   {
     imagen: i8,
     titulo: "FALDA LARGA EN DENIM",
-    precio: "89.900",
+    precio: "89900",
   },
   {
     imagen: i9,
     titulo: "JEAN DESFLECADO",
-    precio: "118.900",
+    precio: "118900",
   },
   {
     imagen: i10,
     titulo: "JEAN MOM AZUL CLARO",
-    precio: "127.900",
+    precio: "127900",
   },
   {
     imagen: i11,
     titulo: "PANTALÓN JOGGER",
-    precio: "120.900",
+    precio: "120900",
   },
   {
     imagen: i12,
     titulo: "PANTALÓN TIPO CARGO",
-    precio: "130.900",
+    precio: "130900",
   },
   {
     imagen: i13,
     titulo: 'POLO HP23YAIZA',
-    precio: '90.900'
+    precio: '90900'
   },
   {
     imagen: i14,
     titulo: 'TENIS ADIDAS CLÁSICOS',
-    precio: '400.900'
+    precio: '400900'
   },
   {
     imagen: i15,
     titulo: 'TENIS ADIDAS CON DISEÑO ',
-    precio: '400.900'
+    precio: '400900'
   },
   {
     imagen: i16,
     titulo: 'TENIS ADIDAS DEPORTIVOS',
-    precio: '390.900'
+    precio: '390900'
   },
   {
     imagen: i17,
     titulo: 'TENIS ADIDAS HOOPS',
-    precio: '350.900'
+    precio: '350900'
   },
   {
     imagen: i18,
     titulo: 'TENIS NEW BALANCE',
-    precio: '350.900'
+    precio: '350900'
   },
   {
     imagen: i19,
     titulo: 'TENIS NEW BALANCE',
-    precio: '450.400'
+    precio: '450400'
   },
   {
     imagen: i20,
     titulo: 'VESTIDO CORTO',
-    precio: '83.900'
+    precio: '83900'
   },
 ];
 

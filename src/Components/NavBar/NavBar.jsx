@@ -9,7 +9,7 @@ const NavBar = () => {
   const activeStyle = 'underline underline-offset-4'
   const context = useContext(ShoppingCartContext)
   return (
-    <nav className='w-full h-14 hidden bg-gray-100 lg:flex p-4 justify-between'>
+    <nav className='w-full h-14 hidden bg-gray-200 lg:flex p-4 justify-between'>
       <ul>
         <li className='text-xl font-black'>
           <NavLink to='/'>

@@ -23,102 +23,102 @@ const productos = [
   {
     imagen: i1,
     titulo: "VELERO II POPELINA",
-    precio: "83.900",
+    precio: "83900",
   },
   {
     imagen: i2,
     titulo: "CARTERA GI23/POR304 ",
-    precio: "47.900",
+    precio: "47900",
   },
   {
     imagen: i3,
     titulo: "KALESI.B FRANELA",
-    precio: "79.900",
+    precio: "79900",
   },
   {
     imagen: i4,
     titulo: "CASACA FI23/HUSTON DENIM",
-    precio: "161.900",
+    precio: "161900",
   },
   {
     imagen: i5,
     titulo: "CASACA NORWAY II DENIM",
-    precio: "188.900",
+    precio: "188900",
   },
   {
     imagen: i6,
     titulo: "ENTERIZO IP24/CARMMEL",
-    precio: "97.900",
+    precio: "97900",
   },
   {
     imagen: i7,
     titulo: "GORRO FI23/MARBRAVA DRILL",
-    precio: "55.900",
+    precio: "55900",
   },
   {
     imagen: i8,
     titulo: "GORRO JP24/TONALES DRILL",
-    precio: "48.900",
+    precio: "48900",
   },
   {
     imagen: i9,
     titulo: "PANTALON GI23/ CARGO",
-    precio: "118.900",
+    precio: "118900",
   },
   {
     imagen: i10,
     titulo: "PANTALON JEANE.G BULL",
-    precio: "127.900",
+    precio: "127900",
   },
   {
     imagen: i11,
     titulo: "red bag",
-    precio: "120.900",
+    precio: "120900",
   },
   {
     imagen: i12,
     titulo: "PANTALON JEANE.G 2oscu",
-    precio: "127.900",
+    precio: "127900",
   },
   {
     imagen: i13,
     titulo: 'PANTALON GI23/BRUNELLA',
-    precio: '118.900'
+    precio: '118900'
   },
   {
     imagen: i14,
     titulo: 'PANTALON JEANE.G BULL',
-    precio: '159.900'
+    precio: '159900'
   },
   {
     imagen: i15,
     titulo: 'POLERA DI23/KALESI.B',
-    precio: '79.900'
+    precio: '79900'
   },
   {
     imagen: i16,
     titulo: 'POLO BOX M/C BENN PIQUE',
-    precio: '90.900'
+    precio: '90900'
   },
   {
     imagen: i17,
     titulo: 'POLO EI23/KUBRICK JERSEY',
-    precio: '35.900'
+    precio: '35900'
   },
   {
     imagen: i18,
     titulo: 'POLO EI23/KUBRICK JERSEY',
-    precio: '99.900'
+    precio: '99900'
   },
   {
     imagen: i19,
     titulo: 'POLO HP23/YAIZA JERSEY',
-    precio: '45.400'
+    precio: '45400'
   },
   {
     imagen: i20,
     titulo: 'VESTIDO FI23/CECILI RAYON',
-    precio: '83.900'
+    precio: 83900
   },
 ];
 
