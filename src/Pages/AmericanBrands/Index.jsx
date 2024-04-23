@@ -1,3 +1,5 @@
+import { useContext, useEffect } from "react";
+import { ShoppingCartContext } from "../../Context/Index";
 import NavBar from '../../Components/NavBar/NavBar'
 import LayoutMarcas from '../../Components/LayoutMarcas/LayoutMarcas.jsx'
 import BotonesBusqueda from '../../Components/BotonesBusqueda/BotonesBusqueda.jsx'
@@ -9,24 +11,29 @@ import CheckoutSideMenu from "../../Components/CheckoutSideMenu/CheckoutSideMenu
 import productos from './productos.js'
 
 const AmericanBrands = () => {
+  const context = useContext(ShoppingCartContext)
+
+  useEffect(() => {
+    if (context.buscarPorTitulo) context.setItemsFiltrados(context.itemsFiltradosPorTitulo(productos, context.buscarPorTitulo))
+  }, [productos, context.buscarPorTitulo])
+  console.log(context.itemsFiltrados)
   return (
     <div>
       <NavBar />
       <LayoutMarcas>
         <p className='text-xl font-bold border-b-2 border-yellow-500 uppercase'>Viste con actitud, encuentra tu estilo en American Brands</p>
         <div className='flex justify-between items-center mt-4'>
-          <BotonesBusqueda />          
+          <BotonesBusqueda />
 
         </div>
       </LayoutMarcas>
       <ProductDetail />
-      <CheckoutSideMenu/>
+      <CheckoutSideMenu />
       <LayoutCards>
         <CardsMarcas data={productos} />
-        
       </LayoutCards>
       <FooterMovil />
-      
+
     </div>
   )
 }

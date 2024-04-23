@@ -1,8 +1,11 @@
 import { NavLink } from 'react-router-dom'
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../Context/Index";
 import { useState } from 'react';
 import { Bars3Icon } from '@heroicons/react/24/solid'
 
 const BotonesBusqueda = () => {
+    const context = useContext(ShoppingCartContext)
     const [dropdownVisible, setDropdownVisible] = useState(false);
 
     const toggleDropdown = () => {
@@ -16,7 +19,7 @@ const BotonesBusqueda = () => {
                     <Bars3Icon className='w-6 h-6 mr-2' />
                     Filtrar
                 </button>
-                <div  className={`absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${dropdownVisible ? '' : 'hidden'}`}>
+                <div className={`absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${dropdownVisible ? '' : 'hidden'}`}>
                     <div className="py-1">
                         <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Hombre</NavLink>
                         <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Mujer</NavLink>
@@ -29,12 +32,10 @@ const BotonesBusqueda = () => {
 
             {/* Botón Despegable */}
             <div className="relative inline-block text-left mr-20">
-                <button type="button" className="bg-black hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
-                    Lo mas nuevo
-                </button>
+                <input className="outline-none p-3 rounded-full shadow-lg" placeholder="busca tu producto" type="search" onChange={(e) => context.setBuscarPorTitulo(e.target.value)} />
             </div>
 
-            <p className="text-sm text-gray-500">20 productos disponibles</p>
+            <p className="text-sm text-gray-500">20</p>
         </>
     )
 }

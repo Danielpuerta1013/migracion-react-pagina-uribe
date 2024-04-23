@@ -1,13 +1,21 @@
 import { NavLink } from "react-router-dom"
 import { useContext } from "react"
+import { useState } from 'react';
 import { ShoppingCartContext } from "../../Context/Index";
 import { ShoppingBagIcon } from '@heroicons/react/24/solid'
 import { UserCircleIcon } from '@heroicons/react/24/solid'
 
 
 const NavBar = () => {
-  const activeStyle = 'underline underline-offset-4'
-  const context = useContext(ShoppingCartContext)
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
+  };
+
+  const activeStyle = 'underline underline-offset-4';
+  const context = useContext(ShoppingCartContext);
+
   return (
     <nav className='w-full h-14 hidden bg-gray-200 lg:flex p-4 justify-between'>
       <ul>
@@ -42,22 +50,30 @@ const NavBar = () => {
       </ul>
       <ul className="flex space-x-4">
         <li>
-          <NavLink to="/my-order">
+          <NavLink to="/my-orders/last">
             <ShoppingBagIcon className="h-6 w-6" />
           </NavLink>
         </li>
         {context.count}
         <li>
-          <NavLink to="/sign-in">
-            <UserCircleIcon className="h-6 w-6" />
-            
-          </NavLink>
+          <div className="relative">
+            <button onClick={toggleDropdown} className="focus:outline-none">
+              <UserCircleIcon className="h-6 w-6" />
+            </button>
+            <div className={`absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${dropdownVisible ? '' : 'hidden'}`}>
+              <div className="py-1">
+                <NavLink to="/sign-in" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Login</NavLink>
+                <NavLink to="/registro" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Registrarse</NavLink>
+                <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Mi cuenta</NavLink>
+                <NavLink to="/my-orders" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Historial de compras</NavLink>
+
+              </div>
+            </div>
+          </div>
         </li>
-        
       </ul>
-      
     </nav>
   )
 }
 
-export default NavBar
+export default NavBar;

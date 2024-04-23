@@ -1,11 +1,13 @@
 import { createContext } from "react"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 
 
 export const ShoppingCartContext = createContext()
 export const ShoppingCartProvider = ({ children }) => {
     // contar productos en el carro
     const[count,setCount]=useState(0)
+    //cuenta cuantas cards hay
+   
 
     //abrir y cerrar la pestaña de detalles
     const[isProductDetailOpen,setIsProductDetailOpen]=useState(false)
@@ -34,6 +36,15 @@ export const ShoppingCartProvider = ({ children }) => {
 
     const[orden,setOrden]=useState([])
 
+    //buscar por titulo
+    const[buscarPorTitulo,setBuscarPorTitulo]=useState(null)
+    //items filtrados
+    const[itemsFiltrados,setItemsFiltrados]=useState(null)
+
+    const itemsFiltradosPorTitulo = (productos, buscarPorTitulo) => {
+        return productos?.filter(item => item.titulo.toLowerCase().includes(buscarPorTitulo.toLowerCase()))
+      }
+
     
     return (
         <ShoppingCartContext.Provider value={{
@@ -52,8 +63,13 @@ export const ShoppingCartProvider = ({ children }) => {
             cantidadPrendas,
             handleCantidadChange,
             orden,
-            setOrden
-
+            setOrden,
+            buscarPorTitulo,
+            setBuscarPorTitulo,
+            itemsFiltrados,
+            setItemsFiltrados,
+            itemsFiltradosPorTitulo
+            
         }}>
             {children}
         </ShoppingCartContext.Provider>
