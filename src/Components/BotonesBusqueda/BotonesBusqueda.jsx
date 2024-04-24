@@ -11,6 +11,10 @@ const BotonesBusqueda = () => {
     const toggleDropdown = () => {
         setDropdownVisible(!dropdownVisible);
     };
+    const clearFilters = () => {
+        context.setBuscarPorTitulo('');
+        context.setCategoriaSeleccionada(null);
+    };
 
     return (
         <>
@@ -21,9 +25,12 @@ const BotonesBusqueda = () => {
                 </button>
                 <div className={`absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ${dropdownVisible ? '' : 'hidden'}`}>
                     <div className="py-1">
-                        <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Hombre</NavLink>
-                        <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Mujer</NavLink>
-                        <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">camisas</NavLink>
+                        <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold" onClick={clearFilters}>Todos</NavLink>
+                        <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Otros</NavLink>
+                        <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold" onClick={() => {
+                            context.setCategoriaSeleccionada('camisas');
+                            context.setBuscarPorTitulo(''); // Limpia la búsqueda por título
+                        }}>camisas</NavLink>
                         <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">pantalones</NavLink>
                         <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">chaquetas</NavLink>
                     </div>

@@ -54,7 +54,7 @@ const NavBar = () => {
             <ShoppingBagIcon className="h-6 w-6" />
           </NavLink>
         </li>
-        {context.count}
+        {context.cartProducts.length}
         <li>
           <div className="relative">
             <button onClick={toggleDropdown} className="focus:outline-none">

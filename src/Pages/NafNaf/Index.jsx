@@ -1,3 +1,5 @@
+import { useContext, useEffect } from "react";
+import { ShoppingCartContext } from "../../Context/Index";
 import NavBar from '../../Components/NavBar/NavBar'
 import LayoutMarcas from '../../Components/LayoutMarcas/LayoutMarcas.jsx'
 import BotonesBusqueda from '../../Components/BotonesBusqueda/BotonesBusqueda.jsx'
@@ -10,6 +12,28 @@ import productos from './productos.js'
 
 
 const NafNaf = () => {
+  const context = useContext(ShoppingCartContext)
+
+  useEffect(() => {
+    if (context.buscarPorTitulo) context.setItemsFiltrados(context.itemsFiltradosPorTitulo(productos, context.buscarPorTitulo))
+  }, [productos, context.buscarPorTitulo])
+
+  const renderView=()=>{
+    if(context.buscarPorTitulo?.length>0){
+      if(context.itemsFiltrados?.length>0){
+        return(
+          <CardsMarcas data={context.itemsFiltrados} />
+        )
+      }else{
+        <div><p>no hay coincidencias</p></div>
+      }
+    }else{
+      return(
+        <CardsMarcas data={productos} />
+      )
+
+    }
+  }
   return (
     <div>
       <NavBar />
@@ -22,7 +46,7 @@ const NafNaf = () => {
       <ProductDetail />
       <CheckoutSideMenu/>
       <LayoutCards>
-        <CardsMarcas data={productos} />
+        {renderView()}
       </LayoutCards>
       <FooterMovil />
 

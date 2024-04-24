@@ -16,7 +16,25 @@ const AmericanBrands = () => {
   useEffect(() => {
     if (context.buscarPorTitulo) context.setItemsFiltrados(context.itemsFiltradosPorTitulo(productos, context.buscarPorTitulo))
   }, [productos, context.buscarPorTitulo])
-  console.log(context.itemsFiltrados)
+
+  const renderView = () => {
+    let itemsFiltrados = [];
+    
+    if (context.buscarPorTitulo) {
+      itemsFiltrados = context.itemsFiltrados || [];
+    } else if (context.categoriaSeleccionada) {
+      itemsFiltrados = context.itemsFiltradosPorCategoria(productos, context.categoriaSeleccionada);
+    } else {
+      itemsFiltrados = productos;
+    }
+  
+    if (itemsFiltrados.length > 0) {
+      return <CardsMarcas data={itemsFiltrados} />;
+    } else {
+      return <div><p>No hay coincidencias</p></div>;
+    }
+  }
+  
   return (
     <div>
       <NavBar />
@@ -30,7 +48,7 @@ const AmericanBrands = () => {
       <ProductDetail />
       <CheckoutSideMenu />
       <LayoutCards>
-        <CardsMarcas data={productos} />
+        {renderView()}
       </LayoutCards>
       <FooterMovil />
 
