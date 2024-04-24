@@ -19,19 +19,20 @@ const Rifle = () => {
   }, [productos, context.buscarPorTitulo])
 
   const renderView = () => {
-    if (context.buscarPorTitulo?.length > 0) {
-      if (context.itemsFiltrados?.length > 0) {
-        return (
-          <CardsMarcas data={context.itemsFiltrados} />
-        )
-      } else {
-        <div><p>no hay coincidencias</p></div>
-      }
+    let itemsFiltrados = [];
+    
+    if (context.buscarPorTitulo) {
+      itemsFiltrados = context.itemsFiltrados || [];
+    } else if (context.categoriaSeleccionada) {
+      itemsFiltrados = context.itemsFiltradosPorCategoria(productos, context.categoriaSeleccionada);
     } else {
-      return (
-        <CardsMarcas data={productos} />
-      )
-
+      itemsFiltrados = productos;
+    }
+  
+    if (itemsFiltrados.length > 0) {
+      return <CardsMarcas data={itemsFiltrados} />;
+    } else {
+      return <div><p>No hay coincidencias</p></div>;
     }
   }
   return (
