@@ -59,15 +59,20 @@ export const ShoppingCartProvider = ({ children }) => {
 
     const [productosApi, setProductosApi] = useState([]);
     const getProductosApi = async () => {
-        const resultado = await axios.get("http://localhost:8080/storeapi/v1/producto",{ maxRedirects: 0 });        
+        const resultado = await axios.get("http://localhost:8080/storeapi/v1/producto",{ maxRedirects: 0 });           
         setProductosApi(resultado.data);
+        
            
         
     };
 
     useEffect(() => {
         getProductosApi()
+        console.log(productosApi)
     }, [])
+    useEffect(() => {
+        console.log(productosApi); // Verificar si productosApi se está actualizando
+    }, [productosApi]);
 
     
 
