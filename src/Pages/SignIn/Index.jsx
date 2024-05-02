@@ -1,11 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import backgroundImage from '../../assets//imagenesSignyRegistro/fondologin2.jpg'
+
 
 
 const SignIn = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-cover bg-fixed" id="fondo_registro" style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-cover bg-fixed" id="fondo_registro" style={{ backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/database-proyecto-final.appspot.com/o/img-sign-registro%2Ffondologin2.jpg?alt=media&token=b7324039-40e8-460e-ae99-eb784f6310f6)` }}>
       <div className="max-w-md w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-white">

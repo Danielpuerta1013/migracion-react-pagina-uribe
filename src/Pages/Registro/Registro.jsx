@@ -1,10 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import backgroundImage from '../../assets//imagenesSignyRegistro/fondoRegistro.jpg'
 
 const Registro = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-200 border bg-cover bg-fixed" style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div className="flex items-center justify-center h-screen bg-gray-200 border bg-cover bg-fixed" style={{ backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/database-proyecto-final.appspot.com/o/img-sign-registro%2FfondoRegistro.jpg?alt=media&token=0573a0ec-c855-4932-9610-d415b3a0b2cc)` }}>
       <form className="w-full max-w-sm bg-white rounded p-8 shadow-xl border" id="formulario">
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">

@@ -56,7 +56,7 @@ const NavBar = () => {
         </li>
         {context.cartProducts.length}
         <li>
-          <div className="relative">
+          <div className="relative z-10">
             <button onClick={toggleDropdown} className="focus:outline-none">
               <UserCircleIcon className="h-6 w-6" />
             </button>

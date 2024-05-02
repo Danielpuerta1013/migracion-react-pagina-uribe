@@ -1,5 +1,6 @@
 import { createContext } from "react"
 import { useState, useEffect } from "react"
+import axios from "axios";
 
 
 export const ShoppingCartContext = createContext()
@@ -56,6 +57,23 @@ export const ShoppingCartProvider = ({ children }) => {
         return productos?.filter(item => item.categoria.toLowerCase() === categoria.toLowerCase());
     };
 
+    const [productosApi, setProductosApi] = useState([]);
+    const getProductosApi = async () => {
+        const resultado = await axios.get("http://localhost:8080/storeapi/v1/producto",{ maxRedirects: 0 });        
+        setProductosApi(resultado.data);
+           
+        
+    };
+
+    useEffect(() => {
+        getProductosApi()
+    }, [])
+
+    
+
+    
+    
+
 
     return (
         <ShoppingCartContext.Provider value={{
@@ -80,11 +98,12 @@ export const ShoppingCartProvider = ({ children }) => {
             itemsFiltrados,
             setItemsFiltrados,
             itemsFiltradosPorTitulo,
-            buscarPorCategoria, 
+            buscarPorCategoria,
             setBuscarPorCategoria,
             itemsFiltradosPorCategoria,
-            categoriaSeleccionada, 
-            setCategoriaSeleccionada
+            categoriaSeleccionada,
+            setCategoriaSeleccionada,
+            productosApi, setProductosApi,getProductosApi
 
 
         }}>
