@@ -52,12 +52,18 @@ export const ShoppingCartProvider = ({ children }) => {
     const [productosFiltradosPorCategoria, setProductosFiltradosPorCategoria] = useState([]);
     const obtenerProductosPorCategoria = async (categoriaId) => {
         try {
-          const resultado = await axios.get(`http://localhost:8080/storeapi/v1/tipoprenda/${categoriaId}`);
-          setProductosFiltradosPorCategoria(resultado.data.productos);
+            const resultado = await axios.get(`http://localhost:8080/storeapi/v1/tipoprenda/${categoriaId}`);
+            setProductosFiltradosPorCategoria(resultado.data.productos);
         } catch (error) {
-          console.error("Error al obtener productos por categoría:", error);
+            console.error("Error al obtener productos por categoría:", error);
         }
-      };
+    };
+
+
+    //login
+
+
+    const [nombreUsuario, setNombreUsuario] = useState(null);
 
 
     return (
@@ -85,10 +91,9 @@ export const ShoppingCartProvider = ({ children }) => {
             itemsFiltradosPorTitulo,
             productosFiltradosPorCategoria,
             obtenerProductosPorCategoria,
-            setProductosFiltradosPorCategoria
-                      
-            
-
+            setProductosFiltradosPorCategoria,
+            nombreUsuario,
+            setNombreUsuario
 
         }}>
             {children}

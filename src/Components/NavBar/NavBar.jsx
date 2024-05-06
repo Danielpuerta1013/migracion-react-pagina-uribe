@@ -55,7 +55,9 @@ const NavBar = () => {
           </NavLink>
         </li>
         {context.cartProducts.length}
+        <li>Hola, {context.nombreUsuario}</li>
         <li>
+          
           <div className="relative z-10">
             <button onClick={toggleDropdown} className="focus:outline-none">
               <UserCircleIcon className="h-6 w-6" />
