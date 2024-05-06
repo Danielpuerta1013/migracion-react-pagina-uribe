@@ -22,10 +22,10 @@ const MyOrder = () => {
           <div className="flex flex-col w-1/2">
             {context.orden?.[index]?.productos.map((producto) => (              
               <Ordercards
-                key={producto.titulo}
-                titulo={producto.titulo}
-                imagen={producto.imagen}
-                precio={producto.precio}
+                key={producto.id_producto}
+                titulo={producto.nombreProducto}
+                imagen={producto.fotografia}
+                precio={producto.precioUnitario}
               />
             ))}
             <button className="bg-black py-3 text-white w-full rounded-lg mt-6 mb-6">PAGAR AHORA</button>

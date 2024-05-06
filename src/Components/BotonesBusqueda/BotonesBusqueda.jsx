@@ -13,7 +13,7 @@ const BotonesBusqueda = () => {
   };
   const clearFilters = () => {
     context.setBuscarPorTitulo("");
-    context.setCategoriaSeleccionada(null);
+    context.setProductosFiltradosPorCategoria([]);
   };
 
   return (
@@ -42,60 +42,42 @@ const BotonesBusqueda = () => {
             <NavLink
               to="#"
               className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold"
-              onClick={() => {
-                context.setCategoriaSeleccionada("chaquetas");
-                context.setBuscarPorTitulo("");
-              }}
+              onClick={() => context.obtenerProductosPorCategoria(2)}
             >
               Chaquetas
             </NavLink>
             <NavLink
               to="#"
               className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold"
-              onClick={() => {
-                context.setCategoriaSeleccionada("camisas");
-                context.setBuscarPorTitulo("");
-              }}
+              onClick={() => context.obtenerProductosPorCategoria(1)}
             >
               camisas
             </NavLink>
             <NavLink
               to="#"
               className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold"
-              onClick={() => {
-                context.setCategoriaSeleccionada("pantalones");
-                context.setBuscarPorTitulo("");
-              }}
+              onClick={() => context.obtenerProductosPorCategoria(3)}
             >
               Pantalones
             </NavLink>
             <NavLink
               to="#"
               className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold"
-              onClick={() => {
-                context.setCategoriaSeleccionada("calzado");
-                context.setBuscarPorTitulo("");
-              }}
+              onClick={() => context.obtenerProductosPorCategoria(6)}
             >
               Calzado
             </NavLink>
             <NavLink
               to="#"
               className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold"
-              onClick={() => {
-                context.setCategoriaSeleccionada("vestidos");
-                context.setBuscarPorTitulo("");
-              }}
+              onClick={() => context.obtenerProductosPorCategoria(4)}
             >
               Vestidos
             </NavLink>
             <NavLink
               to="#"
               className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold"
-              onClick={() => {
-                context.setCategoriaSeleccionada("accesorios");
-                context.setBuscarPorTitulo("");
-              }}
+              onClick={() => context.obtenerProductosPorCategoria(5)}
             >
               Accesorios
             </NavLink>
@@ -113,7 +95,7 @@ const BotonesBusqueda = () => {
         />
       </div>
 
-      <p className="text-sm text-gray-500">20</p>
+      
     </>
   );
 };
