@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useContext } from "react"
 import { ShoppingCartContext } from "../../Context/Index";
 import axios from 'axios'
@@ -21,32 +21,33 @@ const SignIn = () => {
   }
   useEffect(() => {
     consultarUsuarios()
-    
+
   }, [])
-  useEffect(() => {    
-      console.log(usuarios)
+  useEffect(() => {
+    console.log(usuarios)
   }, [usuarios]);
 
 
-  const handleSubmit =  (e) => {
-    e.preventDefault();    
-      
-      // Verificar si el correo y la cédula coinciden con algún usuario de la lista
-      const usuarioEncontrado = usuarios.find(usuario => usuario.correo === email && usuario.cedula === cedula);
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-      if (usuarioEncontrado) {
-        // Redireccionar al usuario a /home si se encuentra en la lista de usuarios
-        context.setNombreUsuario(usuarioEncontrado.nombres)
-        redireccion('/')
-      } else {
-        // Mostrar alerta indicando que el usuario no fue encontrado
-        Swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: 'Usuario no encontrado. Por favor, verifique sus credenciales.'
-        });
-      }
-   
+    // Verificar si el correo y la cédula coinciden con algún usuario de la lista
+    const usuarioEncontrado = usuarios.find(usuario => usuario.correo === email && usuario.cedula === cedula);
+
+    if (usuarioEncontrado) {
+      // Redireccionar al usuario a /home si se encuentra en la lista de usuarios
+      context.setNombreUsuario(usuarioEncontrado.nombres)
+      context.setIsUsuarioActivo(true)
+      redireccion('/')
+    } else {
+      // Mostrar alerta indicando que el usuario no fue encontrado
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Usuario no encontrado. Por favor, verifique sus credenciales.'
+      });
+    }
+
   };
 
   return (

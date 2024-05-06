@@ -1,11 +1,25 @@
 import React from "react";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import NavBar from "../../Components/NavBar/NavBar";
 import { ShoppingCartContext } from "../../Context/Index";
 import Ordercards from "../../Components/OrderCards/Ordercards.jsx";
+import Swal from "sweetalert2";
 
 const MyOrder = () => {
+  const redireccion = useNavigate();
   const context = useContext(ShoppingCartContext);
+
+  const handleClick = () => {  
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "El pago ha sido aceptado",
+      showConfirmButton: false,
+      timer: 1500
+    });  
+    redireccion('/');
+  };
 
   const hayProductos = context.orden && context.orden.length > 0 && context.orden[0].productos.length > 0
   const pathActual = window.location.pathname
@@ -28,7 +42,7 @@ const MyOrder = () => {
                 precio={producto.precioUnitario}
               />
             ))}
-            <button className="bg-black py-3 text-white w-full rounded-lg mt-6 mb-6">PAGAR AHORA</button>
+            <button onClick={handleClick} className="bg-black py-3 text-white w-full rounded-lg mt-6 mb-6">PAGAR AHORA</button>
           </div>
         ) : (
           <div className="text-center mt-6">

@@ -24,7 +24,7 @@ const CheckoutSideMenu = () => {
       date: fechaActual,
       productos: context.cartProducts,
       productosTotales: context.cartProducts.length,
-      precioTotal: precioTotal(context.cartProducts, context.cantidadPrendas),
+      precioTotal: totalPrice(context.cartProducts, context.cantidadPrendas),
     };
     context.setOrden([...context.orden, ordertoAdd]);
     context.setCartProducts([]);

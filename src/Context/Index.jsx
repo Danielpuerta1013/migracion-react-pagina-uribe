@@ -62,7 +62,7 @@ export const ShoppingCartProvider = ({ children }) => {
 
     //login
 
-
+    const [isUsuarioActivo,setIsUsuarioActivo]=useState(false)
     const [nombreUsuario, setNombreUsuario] = useState(null);
 
 
@@ -93,7 +93,8 @@ export const ShoppingCartProvider = ({ children }) => {
             obtenerProductosPorCategoria,
             setProductosFiltradosPorCategoria,
             nombreUsuario,
-            setNombreUsuario
+            setNombreUsuario,
+            isUsuarioActivo,setIsUsuarioActivo
 
         }}>
             {children}
