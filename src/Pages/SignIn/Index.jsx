@@ -18,6 +18,7 @@ const SignIn = () => {
     let respuesta = await axios.get("http://localhost:8080/storeapi/v1/usuario");
     let usuarios = respuesta.data
     setUsuarios(usuarios)
+    console.log(respuesta)
   }
   useEffect(() => {
     consultarUsuarios()
@@ -26,6 +27,7 @@ const SignIn = () => {
   useEffect(() => {
     console.log(usuarios)
   }, [usuarios]);
+  console.log(usuarios)
 
 
   const handleSubmit = (e) => {
@@ -33,6 +35,7 @@ const SignIn = () => {
 
     // Verificar si el correo y la cédula coinciden con algún usuario de la lista
     const usuarioEncontrado = usuarios.find(usuario => usuario.correo === email && usuario.cedula === cedula);
+    console.log(usuarioEncontrado)
 
     if (usuarioEncontrado) {
       // Redireccionar al usuario a /home si se encuentra en la lista de usuarios
