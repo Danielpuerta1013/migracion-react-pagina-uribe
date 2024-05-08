@@ -1,8 +1,4 @@
 import React from 'react'
-import mango from '../../assets/ImagenesPaginaPrincipal/mango.png'
-import nafnaf from '../../assets/ImagenesPaginaPrincipal/nafnaf.png'
-import ab from '../../assets/ImagenesPaginaPrincipal/ab.jpg'
-import rifle from '../../assets/ImagenesPaginaPrincipal/RIFLE.png'
 
 const EmpresasAfiliadas = () => {
     return (
@@ -12,7 +8,7 @@ const EmpresasAfiliadas = () => {
             <div className="w-full h-full flex flex-col space-y-4 items-center justify-center">
 
                 <div className="relative w-full h-96 rounded-xl overflow-hidden">
-                    <img className="w-full h-full object-contain" src={mango} alt="Imagen de Mango" />
+                    <img className="w-full h-full object-contain" src='https://firebasestorage.googleapis.com/v0/b/database-proyecto-final.appspot.com/o/img-principal%2Fmango.png?alt=media&token=98615222-16c0-4a2a-b437-abd26b05666c' alt="Imagen de Mango" />
                     <div className="absolute inset-0 bg-black opacity-0 hover:opacity-90 transition-opacity duration-300">
                         <div className="flex h-full items-center justify-center">
                             <p className="text-white text-center px-8 text-4xl font-bold">
@@ -26,7 +22,7 @@ const EmpresasAfiliadas = () => {
 
                 <div className="lg:flex lg:h-full lg:w-full lg:space-x-4">
                     <div className="relative w-full h-96 rounded-xl overflow-hidden mb-8 lg:h-auto">
-                        <img className="w-full h-full object-cover" src={ab} alt="Imagen de American Brands" />
+                        <img className="w-full h-full object-cover" src='https://firebasestorage.googleapis.com/v0/b/database-proyecto-final.appspot.com/o/img-principal%2Fab.jpg?alt=media&token=44047339-4478-4fc6-bd41-1d592d3931ad' alt="Imagen de American Brands" />
                         <div className="absolute inset-0 bg-black opacity-0 hover:opacity-90 transition-opacity duration-300">
                             <div className="flex h-full items-center justify-center">
                                 <p className="text-white text-center px-8 text-4xl font-bold">
@@ -39,7 +35,7 @@ const EmpresasAfiliadas = () => {
                     </div>
                     <div className="h-full w-full">
                         <div className="relative w-full h-96 rounded-xl overflow-hidden mb-8">
-                            <img className="w-full h-full object-cover" src={rifle} alt="Imagen de Rifle" />
+                            <img className="w-full h-full object-cover" src='https://firebasestorage.googleapis.com/v0/b/database-proyecto-final.appspot.com/o/img-principal%2FRIFLE.png?alt=media&token=784ea3dc-b818-43b6-8424-003c85d3b787' alt="Imagen de Rifle" />
                             <div className="absolute inset-0 bg-black opacity-0 hover:opacity-90 transition-opacity duration-300">
                                 <div className="flex h-full items-center justify-center">
                                     <p className="text-white text-center px-8 text-4xl font-bold">
@@ -51,7 +47,7 @@ const EmpresasAfiliadas = () => {
                             </div>
                         </div>
                         <div className="relative w-full h-96 rounded-xl overflow-hidden mb-8">
-                            <img className="w-full h-full object-cover" src={nafnaf} alt="Logo de NAF-NAF" />
+                            <img className="w-full h-full object-cover" src='https://firebasestorage.googleapis.com/v0/b/database-proyecto-final.appspot.com/o/img-principal%2Fnafnaf.png?alt=media&token=66d2f081-21dc-4cfd-92eb-50a9ad0581dc' alt="Logo de NAF-NAF" />
                             <div className="absolute inset-0 bg-black opacity-0 hover:opacity-90 transition-opacity duration-300">
                                 <div className="flex h-full items-center justify-center">
                                     <p className="text-white text-center px-8 text-4xl font-bold">
