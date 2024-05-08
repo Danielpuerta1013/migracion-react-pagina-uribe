@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { ShoppingCartContext } from "../../Context/Index";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import Ordercards from "../../Components/OrderCards/Ordercards.jsx";
-import { precioTotal } from "../../assets/utils/index.js";
+
+import { totalPrice } from "../../utils/utils.js";
 import "./style.css";
 
 const CheckoutSideMenu = () => {
@@ -12,7 +13,7 @@ const CheckoutSideMenu = () => {
   // funcion que filtra los elementos del carrito
   const handleDelete = (titulo) => {
     const filteredProducts = context.cartProducts.filter(
-      (producto) => producto.titulo != titulo
+      (producto) => producto.nombreProducto != titulo
     );
     context.setCartProducts(filteredProducts);
   };
@@ -23,7 +24,7 @@ const CheckoutSideMenu = () => {
       date: fechaActual,
       productos: context.cartProducts,
       productosTotales: context.cartProducts.length,
-      precioTotal: precioTotal(context.cartProducts, context.cantidadPrendas),
+      precioTotal: totalPrice(context.cartProducts, context.cantidadPrendas),
     };
     context.setOrden([...context.orden, ordertoAdd]);
     context.setCartProducts([]);
@@ -48,9 +49,9 @@ const CheckoutSideMenu = () => {
         {context.cartProducts.map((producto, index) => (
           <Ordercards
             key={index}
-            titulo={producto.titulo}
-            imagen={producto.imagen}
-            precio={producto.precio}
+            titulo={producto.nombreProducto}
+            imagen={producto.fotografia}
+            precio={producto.precioUnitario}
             handleDelete={handleDelete}
           />
         ))}
@@ -59,7 +60,7 @@ const CheckoutSideMenu = () => {
         <p className="flex justify-between items-center">
           <span className="font-light text-lg">Total:</span>
           <span className="font-medium text-xl">
-            ${precioTotal(context.cartProducts, context.cantidadPrendas)}
+            ${totalPrice(context.cartProducts, context.cantidadPrendas)}
           </span>
         </p>
         <Link to="/my-orders/last">

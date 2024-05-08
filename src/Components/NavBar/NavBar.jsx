@@ -16,6 +16,13 @@ const NavBar = () => {
   const activeStyle = 'underline underline-offset-4';
   const context = useContext(ShoppingCartContext);
 
+  const cerrarSesion=()=>{
+    context.setNombreUsuario(null)
+      context.setIsUsuarioActivo(false)
+  }
+
+  
+
   return (
     <nav className='w-full h-14 hidden bg-gray-200 lg:flex p-4 justify-between'>
       <ul>
@@ -55,8 +62,10 @@ const NavBar = () => {
           </NavLink>
         </li>
         {context.cartProducts.length}
+        <li>{context.nombreUsuario}</li>
         <li>
-          <div className="relative">
+          
+          <div className="relative z-10">
             <button onClick={toggleDropdown} className="focus:outline-none">
               <UserCircleIcon className="h-6 w-6" />
             </button>
@@ -64,7 +73,7 @@ const NavBar = () => {
               <div className="py-1">
                 <NavLink to="/sign-in" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Login</NavLink>
                 <NavLink to="/registro" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Registrarse</NavLink>
-                <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Mi cuenta</NavLink>
+                <NavLink to="#" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold" onClick={cerrarSesion}>Cerrar sesion</NavLink>
                 <NavLink to="/my-orders" className="block px-4 py-2 text-sm text-black hover:bg-gray-400 hover:font-semibold">Historial de compras</NavLink>
 
               </div>

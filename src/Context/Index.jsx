@@ -1,5 +1,7 @@
 import { createContext } from "react"
 import { useState, useEffect } from "react"
+import axios from "axios"
+
 
 
 export const ShoppingCartContext = createContext()
@@ -29,7 +31,7 @@ export const ShoppingCartProvider = ({ children }) => {
 
     const handleCantidadChange = (event) => {
         // Actualiza el estado de la cantidad cuando el valor del input cambia
-        setCantidadPrendas(parseInt(event.target.value));
+        setCantidadPrendas(event.target.value);
     };
 
     // carrito de compras orden
@@ -42,19 +44,26 @@ export const ShoppingCartProvider = ({ children }) => {
     const [itemsFiltrados, setItemsFiltrados] = useState(null)
 
     const itemsFiltradosPorTitulo = (productos, buscarPorTitulo) => {
-        return productos?.filter(item => item.titulo.toLowerCase().includes(buscarPorTitulo.toLowerCase()))
+        return productos?.filter(item => item.nombreProducto.toLowerCase().includes(buscarPorTitulo.toLowerCase()))
     }
 
     //buscar por categoria
 
-    const [buscarPorCategoria, setBuscarPorCategoria] = useState(null);
-    const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
-    console.log(buscarPorCategoria)
-    console.log(categoriaSeleccionada)
-
-    const itemsFiltradosPorCategoria = (productos, categoria) => {
-        return productos?.filter(item => item.categoria.toLowerCase() === categoria.toLowerCase());
+    const [productosFiltradosPorCategoria, setProductosFiltradosPorCategoria] = useState([]);
+    const obtenerProductosPorCategoria = async (categoriaId) => {
+        try {
+            const resultado = await axios.get(`http://localhost:8080/storeapi/v1/tipoprenda/${categoriaId}`);
+            setProductosFiltradosPorCategoria(resultado.data.productos);
+        } catch (error) {
+            console.error("Error al obtener productos por categoría:", error);
+        }
     };
+
+
+    //login
+
+    const [isUsuarioActivo,setIsUsuarioActivo]=useState(false)
+    const [nombreUsuario, setNombreUsuario] = useState(null);
 
 
     return (
@@ -80,12 +89,12 @@ export const ShoppingCartProvider = ({ children }) => {
             itemsFiltrados,
             setItemsFiltrados,
             itemsFiltradosPorTitulo,
-            buscarPorCategoria, 
-            setBuscarPorCategoria,
-            itemsFiltradosPorCategoria,
-            categoriaSeleccionada, 
-            setCategoriaSeleccionada
-
+            productosFiltradosPorCategoria,
+            obtenerProductosPorCategoria,
+            setProductosFiltradosPorCategoria,
+            nombreUsuario,
+            setNombreUsuario,
+            isUsuarioActivo,setIsUsuarioActivo
 
         }}>
             {children}

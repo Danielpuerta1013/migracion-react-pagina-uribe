@@ -18,7 +18,7 @@ const CardsMarcas = ({ data }) => {
   }
 
   const renderIcon = (index, titulo) => { 
-    const isInCart = context.cartProducts.filter(producto => producto.titulo === titulo).length > 0
+    const isInCart = context.cartProducts.filter(producto => producto.nombreProducto === titulo).length > 0
 
     if (isInCart) {
       return (
@@ -45,15 +45,15 @@ const CardsMarcas = ({ data }) => {
       {data.map((producto, index) => (
         <div key={index} className="bg-white rounded-lg shadow-md p-4 flex flex-col items-center cursor-pointer" onClick={() => showProduct(data[index])}>
           <img
-            src={producto.imagen}
-            alt={producto.titulo}
+            src={producto.fotografia}
+            alt={producto.nombreProducto}
             className="w-full h-40 object-contain rounded-md mb-2"
           />
           <div className="text-center mb-2">
-            <h3 className="text-lg font-medium mb-1 lowercase">{producto.titulo}</h3>
-            <p className="text-gray-500 text-sm mb-2">{producto.precio}</p>
+            <h3 className="text-lg font-medium mb-1 lowercase">{producto.nombreProducto}</h3>
+            <p className="text-gray-500 text-sm mb-2">{producto.precioUnitario}</p>
           </div>
-          {renderIcon(index, data[index].titulo)}
+          {renderIcon(index, data[index].nombreProducto)}
         </div>
       ))}
     </>

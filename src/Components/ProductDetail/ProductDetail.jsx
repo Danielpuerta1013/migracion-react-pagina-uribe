@@ -14,12 +14,12 @@ const ProductDetail = () => {
             <div>
                 <div className="relative" style={{height: '350px'}}>
                     <figure className="px-6 absolute inset-0">
-                        <img className="w-full h-full object-cover rounded-lg " src={context.productToShow.imagen} alt={context.productToShow.titulo} />
+                        <img className="w-full h-full object-cover rounded-lg " src={context.productToShow.fotografia} alt={context.productToShow.nombreProducto} />
                     </figure>
                 </div>
                 <p className="flex flex-col p-6">
-                    <span className="font-medium text-2xl text-center">{context.productToShow.precio}</span>
-                    <span className="font-medium text-md text-center">{context.productToShow.titulo}</span>
+                    <span className="font-medium text-2xl text-center">{context.productToShow.precioUnitario}</span>
+                    <span className="font-medium text-md text-center">{context.productToShow.nombreProducto}</span>
                 </p>
             </div>
         </aside>

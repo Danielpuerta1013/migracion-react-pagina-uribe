@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import backgroundImage from "../../assets/ImagenesPaginaPrincipal/moda2.jpg";
-import moda1 from "../../assets/ImagenesPaginaPrincipal/moda1.jpg";
+
 
 const BanerPrincipal = () => {
   return (
@@ -29,9 +28,9 @@ const BanerPrincipal = () => {
         </div>
         <div
           className="w-full h-full lg:h-96 lg:bg-cover lg:bg-center"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
+          style={{ backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/database-proyecto-final.appspot.com/o/img-principal%2Fmoda2.jpg?alt=media&token=8bb262d1-5da5-43da-8737-9f04d6b3b702)` }}
         >
-          <img className="lg:hidden" src={moda1} alt="" />
+          <img className="lg:hidden" src='https://firebasestorage.googleapis.com/v0/b/database-proyecto-final.appspot.com/o/img-principal%2Fmoda1.jpg?alt=media&token=5f3c85fe-1280-497c-a4a0-f00fa4202fa3' alt="" />
         </div>
       </div>
     </div>
