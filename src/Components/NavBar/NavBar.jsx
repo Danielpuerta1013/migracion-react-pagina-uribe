@@ -53,7 +53,7 @@ const NavBar = () => {
             NAF-NAF
           </NavLink>
         </li>
-        <input className="outline-none p-3 rounded-full shadow-lg" placeholder="busca tu producto" type="search" />
+        
       </ul>
       <ul className="flex space-x-4">
         <li>
