@@ -33,6 +33,15 @@ export const ShoppingCartProvider = ({ children }) => {
         // Actualiza el estado de la cantidad cuando el valor del input cambia
         setCantidadPrendas(event.target.value);
     };
+     // Estado para almacenar la cantidad seleccionada
+    const [productQuantities, setProductQuantities] = useState({});
+
+    const handleCantidadProductoChange = (titulo, cantidad) => {
+        setProductQuantities(prevState => ({
+            ...prevState,
+            [titulo]: cantidad
+        }));
+    };
 
     // carrito de compras orden
 
@@ -94,7 +103,9 @@ export const ShoppingCartProvider = ({ children }) => {
             setProductosFiltradosPorCategoria,
             nombreUsuario,
             setNombreUsuario,
-            isUsuarioActivo,setIsUsuarioActivo
+            isUsuarioActivo,setIsUsuarioActivo,
+            productQuantities, setProductQuantities,
+            handleCantidadProductoChange
 
         }}>
             {children}

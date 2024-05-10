@@ -33,22 +33,22 @@ const NavBar = () => {
         </li>
       </ul>
       <ul className='flex space-x-8'>
-        <li className='font-bold text-md'>
+        <li className='font-bold text-lg'>
           <NavLink to='/mango' className={({ isActive }) => isActive ? activeStyle : undefined}>
             MNG
           </NavLink>
         </li>
-        <li className='font-bold text-md'>
+        <li className='font-bold text-lg'>
           <NavLink to='/american-brands' className={({ isActive }) => isActive ? activeStyle : undefined}>
             AMERICAN BRANDS
           </NavLink>
         </li>
-        <li className='font-bold text-md'>
+        <li className='font-bold text-lg'>
           <NavLink to='/rifle' className={({ isActive }) => isActive ? activeStyle : undefined}>
             RIFLE
           </NavLink>
         </li>
-        <li className='font-bold text-md'>
+        <li className='font-bold text-lg'>
           <NavLink to='/naf-naf' className={({ isActive }) => isActive ? activeStyle : undefined}>
             NAF-NAF
           </NavLink>
